@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsRedditClone</title>
+    <title>Rails Reddit Clone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,6 +15,16 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <%= yield %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+
+
+    <%= render 'shared/footer' %>
   </body>
 </html>
