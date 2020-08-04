@@ -33,6 +33,10 @@ class PostsController < ApplicationController
   end
 end
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> working-on-controllers
+=======
+
+>>>>>>> d345c4450bb285c80c76d391d7507140a1236746
