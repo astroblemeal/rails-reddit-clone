@@ -1,4 +1,5 @@
-<div class="container">
+
+  <% unless user_signed_in? %>
   <div class="row">
     <div class="col">
       <p class="h5">Trending</p>
@@ -21,7 +22,7 @@
       4
     </div>
   </div>
-
+<% end %>
 <div class="row mt-4">
   <div class="col">
     <p class="h5">Popular Posts</p>
@@ -30,7 +31,7 @@
 
   <div class="row">
     <div class="col-8">
-      Left col wide
+      <%= render partial: "posts/list", posts: @posts %>
     </div>
 
     <div class="col-4">
@@ -45,4 +46,3 @@
         <%= link_to "View All", communities_path, class: "btn btn-primary mt-3" %>
     </div>
   </div>
-</div>
