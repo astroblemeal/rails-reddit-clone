@@ -23,7 +23,7 @@
     </div>
   </div>
 <% end %>
-<div class="row mt-4">
+<div class="row">
   <div class="col">
     <p class="h5">Popular Posts</p>
   </div>
@@ -31,7 +31,7 @@
 
   <div class="row">
     <div class="col-8">
-      <%= render partial: "posts/list", posts: @posts %>
+      <%= render "posts/list" %>
     </div>
 
     <div class="col-4">

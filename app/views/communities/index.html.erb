@@ -1,8 +1,6 @@
 <% if user_signed_in? %>
-<div class="float-right">
-  <%= link_to "Create New Community", new_community_path, class: "btn btn-outline-primary" %>
+  <%= link_to "Create New Community", new_community_path, class: "btn btn-outline-primary mb-2" %>
 <% end %>
-</div>
   <% if  @communities.size > 0 %>
     <% @communities.each do |community| %>
       <div class="card">
@@ -11,5 +9,5 @@
       </div>
     <% end %>
    <% else %>
-    <p>No Communities yet..</p>
+    <p>No Communities to show</p>
   <% end %>
