@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_043653) do
+ActiveRecord::Schema.define(version: 2020_08_07_052412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "commuities", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "communities", force: :cascade do |t|
     t.bigint "user_id"
@@ -52,6 +47,15 @@ ActiveRecord::Schema.define(version: 2020_08_07_043653) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["community_id"], name: "index_subscribers_on_community_id"
     t.index ["user_id"], name: "index_subscribers_on_user_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "community_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["community_id"], name: "index_subscriptions_on_community_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
