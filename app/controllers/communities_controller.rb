@@ -8,6 +8,8 @@ class CommunitiesController < ApplicationController
   def show
     @posts = @community.posts
     @subscriber_count = @community.subscribers.count
+    @is_subscribed = user_signed_in? ? Subscription.where(community_id: @community.id, user_id: current_user.id).any? : false
+    @subscription = Subscription.new
   end
 
   def new
@@ -31,6 +33,6 @@ class CommunitiesController < ApplicationController
   end
 
   def community_params
-    params.require(:community).permit(:name, :url, :rules)
+    params.require(:community).permit(:name, :url, :summray, :rules)
   end
 end
