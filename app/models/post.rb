@@ -5,7 +5,11 @@ class Post < ApplicationRecord
  has_many :comments
 
   def score
-    1
+    if self.upvotes > 0 || self.downvotes > 0
+      self.upvotes > 0 ? (self.upvotes - self.downvotes ) : (self.downvotes * -1 )
+    else
+      0
+    end
   end
 
 end
