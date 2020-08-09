@@ -2,15 +2,12 @@
   <div class="card p-3 mb-3" style="border: 1px solid #E7E7E7; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
     <div class="row">
       <div class="col-1 text-center">
-
         <div id="vote-actions-<%= post.id %>" class="vote" data-id="<%= post.id %>">
-
           <div class="fa fa-arrow-up upvote <%= is_upvoted post %>"></div>
           <span class="score"><%= post.score %></span>
           <div class="fa fa-arrow-down downvote <%= is_downvoted post %>"></div>
         </div>
       </div>
-
       <div class="col-11">
         <h4 class="mb-1"><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
         <p><small><%= link_to post.community.name, community_path(post.community) %> Posted by <%= link_to post.user.username, profile_path(post.user.username) %> <%= time_ago_in_words post.created_at %> ago</small></p>
@@ -18,4 +15,4 @@
       </div>
     </div>
   </div>
-<% end %>
+<% end %> 
