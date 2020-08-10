@@ -7,8 +7,7 @@
           <h4><%= link_to post.community.name, community_path(post.community) %></h4>
         </div>
         <div class="col-11">
-          <p class="mb-1"><%= link_to post.title, community_post_path(post.community_id, post) %></p>
-          <p><small>Posted by <%= link_to post.user.username, profile_path(post.user.username) %> <%= time_ago_in_words post.created_at %> ago</small></p>
+          <p style="text-align: center;" class="mb-1"><%= link_to post.title, community_post_path(post.community_id, post) %></p>
         </div>
       </div>
     </div>
