@@ -1,0 +1,20 @@
+
+<div class="row">
+<% @posts.take(3).each do |post| %>
+    <div class="col-3">
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300/?blur=2) ">
+        <div class="card-community-name text-center">
+          <h4><%= link_to post.community.name, community_path(post.community) %></h4>
+        </div>
+        <div class="col-11">
+        <h4 class="mb-1"><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
+        <p><small>Posted by <%= link_to post.user.username, profile_path(post.user.username) %> <%= time_ago_in_words post.created_at %> ago</small></p>
+        <p> <small> <%= truncate post.body, length: 20 %></p></small>
+      </div>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+
