@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-sm-6">
     <%= simple_form_for [@community, @post] do |f| %>
-
       <%= f.input :title %>
       <%= f.input :body, as: :text %>
       <%= f.input :photo, as: :file, input_html: { required: true } %>
