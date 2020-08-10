@@ -8,6 +8,7 @@
       <div class="form-group">
         <%= label_tag :body %>
         <%= form.text_area :body, class: "form-control" %>
+        <%= form.file_field :file %>
       </div>
       <%= form.submit "Submit", class: "btn btn-primary" %>
     <% end %>
