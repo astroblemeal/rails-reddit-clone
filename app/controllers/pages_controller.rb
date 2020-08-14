@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @profile = User.find_by_user_name params[:user_name]
+    @profile = User.find_by_username params[:username]
     @posts = @profile.posts
   end
 end
